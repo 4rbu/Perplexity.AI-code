@@ -4,18 +4,18 @@ const { createCanvas } = require('canvas');
 const title = fs.readFileSync("current_title.txt", "utf8").trim();
 
 const boxes = [
-    { name: "Inkspiller_4", boxWidth: 927, boxHeight: 250, maxFont: 37, minFont: 18 },
+    { name: "Inkspiller_4", boxWidth: 927, boxHeight: 235, maxFont: 37, minFont: 18 },
     { name: "Inkspiller_5", boxWidth: 927, boxHeight: 300, maxFont: 37, minFont: 18 },
     { name: "Inkspiller_6", boxWidth: 927, boxHeight: 350, maxFont: 37, minFont: 18 }
 ];
 
 const fontFamily = 'Arial';
-const pxPerPt = 1.233;             // micro-tune this up/down by .001 for *exact* Canva wrap
-const lineHeightRatio = 1.67;      // optionally tweak by .001 if vertical fit is off
-const margin = 100;                 // Smaller margin = longer lines, for extreme control
+const pxPerPt = 1.50;             // micro-tune this up/down by .001 for *exact* Canva wrap
+const lineHeightRatio = 1.50;      // optionally tweak by .001 if vertical fit is off
+const margin = -150;                 // Smaller margin = longer lines, for extreme control
 
 function measureTextWidth(text, fontSizePt, fontFamily, pxPerPt) {
-    const canvas = createCanvas(1500, 400);
+    const canvas = createCanvas(950, 550);
     const context = canvas.getContext('2d');
     context.font = `bold ${fontSizePt * pxPerPt}px ${fontFamily}`;
     return context.measureText(text).width;
